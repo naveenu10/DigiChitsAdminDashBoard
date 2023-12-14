@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loader from "../components/loader/Loader";
 import PageNotFound from "../components/page-not-found/PageNotFound";
 import Dashboard from "../pages/dashboard/Dashboard";
-const Auth = React.lazy(() => import("../pages/auth/Auth"));
+const AuthMobile = React.lazy(() => import("../pages/auth/AuthMobile"));
+const AuthOtp = React.lazy(() => import("../pages/auth/AuthOtp"));
 
 const ProjectRoutes: React.FC = () => {
   return (
@@ -24,7 +25,8 @@ const ProjectRoutes: React.FC = () => {
         />
 
         <Routes>
-          <Route path="/" element={<Auth />} />
+          <Route path="/" element={<AuthMobile />} />
+          <Route path="/AuthOtp" element={<AuthOtp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
