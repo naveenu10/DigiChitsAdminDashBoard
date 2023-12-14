@@ -22,10 +22,6 @@ const AuthMobile = () => {
     }
   };
 
-  const handleVerifyMobile = () => {
-    setAdminOtp("");
-  };
-
   const handleMobileNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     const mobileNumber = e.target.value;
 
