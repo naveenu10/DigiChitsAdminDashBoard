@@ -29,13 +29,10 @@ const AuthMobile = () => {
   const handleMobileNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     const mobileNumber = e.target.value;
 
-    // Remove non-numeric characters
     const numericMobileNumber = mobileNumber.replace(/\D/g, "");
 
-    // Set the cleaned mobile number to state
     setIsValidNumber(numericMobileNumber);
 
-    // Reset the error when the user starts typing again
     setMobileError(false);
   };
 
