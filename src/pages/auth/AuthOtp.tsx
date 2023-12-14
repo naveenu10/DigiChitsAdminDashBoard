@@ -1,9 +1,8 @@
-import React from "react";
 import { Box, Container, Grid, Input, Typography } from "@mui/material";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import useStyles from "./AuthStyles";
-import { useState } from "react";
 
 const AuthOtp = () => {
   const [adminOtp, setAdminOtp] = useState("");
@@ -43,7 +42,7 @@ const AuthOtp = () => {
               />
               {otpError && (
                 <Typography className={classes.MobileError}>
-                  Please Enter your OTP
+                  Please enter your OTP
                 </Typography>
               )}
             </li>

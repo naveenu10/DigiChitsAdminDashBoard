@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
     loginSignup: {
       color: "#085B53",
       fontSize: "20px",
-      fontWeight: 400,
+      fontWeight: 500,
       fontStyle: "normal",
       fontFamily: "Nunito Sans",
     },

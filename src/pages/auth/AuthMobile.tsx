@@ -1,41 +1,29 @@
-import React from "react";
 import { Box, Container, Grid, Input, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import useStyles from "./AuthStyles";
-import { useState } from "react";
 
 const AuthMobile = () => {
   const [isValidNumber, setIsValidNumber] = useState("");
   const [mobileError, setMobileError] = useState(false);
-  const [adminOtp, setAdminOtp] = useState("");
   const classes = useStyles();
   const navigate = useNavigate();
 
   const handleAuthOtp = () => {
     if (isValidNumber.length === 10) {
-      // Valid mobile number, proceed to OTP page
       navigate("/AuthOtp");
     } else {
-      // Invalid mobile number, display error
       setMobileError(true);
     }
-  };
-
-  const handleVerifyMobile = () => {
-    setAdminOtp("");
   };
 
   const handleMobileNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     const mobileNumber = e.target.value;
 
-    // Remove non-numeric characters
     const numericMobileNumber = mobileNumber.replace(/\D/g, "");
 
-    // Set the cleaned mobile number to state
     setIsValidNumber(numericMobileNumber);
-
-    // Reset the error when the user starts typing again
     setMobileError(false);
   };
 
